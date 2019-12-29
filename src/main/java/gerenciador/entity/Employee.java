@@ -5,10 +5,9 @@ public class Employee {
 	private int id;
     private String name;
     private String department;
-    private long salary;
+    private double salary;
 	
-    public Employee(int id, String name, String department, long salary) {
-		super();
+    public Employee(int id, String name, String department, double salary) {
 		this.id = id;
 		this.name = name;
 		this.department = department;
@@ -61,11 +60,11 @@ public class Employee {
 		this.department = department;
 	}
 	
-    public long getSalary() {
+    public double getSalary() {
 		return salary;
 	}
 	
-    public void setSalary(long salary) {
+    public void setSalary(double salary) {
 		this.salary = salary;
 	}
 	

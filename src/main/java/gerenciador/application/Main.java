@@ -1,7 +1,8 @@
-package gerenciador.servlet;
+package gerenciador.application;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.google.gson.Gson;
 
 import gerenciador.entity.Employee;
+import gerenciador.persistence.EmployeeRepositoryImpl;
 
 @WebServlet(urlPatterns="/first")
 public class Main extends HttpServlet {
@@ -22,13 +24,15 @@ public class Main extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Employee employee = new Employee(1, "Karan", "IT", 5000);
-        String employeeJsonString = this.gson.toJson(employee);
- 
+		EmployeeRepositoryImpl  employee = new EmployeeRepositoryImpl();
+		List<Employee> lista = employee.getAll();
+		
+		String json = gson.toJson(lista);
+        
         PrintWriter out = response.getWriter();
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
-        out.print(employeeJsonString);
+        out.print(json);
         out.flush();
 	}
 
