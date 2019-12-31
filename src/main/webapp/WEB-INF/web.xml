@@ -10,8 +10,28 @@
   	<description></description>
   	<servlet-class>gerenciador.Main</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>NewEmployeeServlet</servlet-name>
+  	<display-name>NewEmployeeServlet</display-name>
+  	<description></description>
+  	<servlet-class>gerenciador.application.NewEmployeeServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ListEmployeeServlet</servlet-name>
+  	<display-name>ListEmployeeServlet</display-name>
+  	<description></description>
+  	<servlet-class>gerenciador.api.ListEmployeeServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>Main</servlet-name>
   	<url-pattern>/Main</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>NewEmployeeServlet</servlet-name>
+  	<url-pattern>/newEmployee</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ListEmployeeServlet</servlet-name>
+  	<url-pattern>/listEmployee</url-pattern>
   </servlet-mapping>
 </web-app>

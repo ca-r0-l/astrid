@@ -29,13 +29,14 @@ public class EmployeeRepositoryImpl implements EmployeeRepository{
 	}
 
 	public void save(Employee e) {
-		String sql = "insert into employee (name, dapartment, salary) values (?, ?, ?);";
+		String sql = "insert into employee (name, department, salary) values (?, ?, ?);";
 		
 		try (PreparedStatement statement = connection.prepareStatement(sql)) {
 			statement.setString(1, e.getName());
 			statement.setString(2, e.getDepartment());
 			statement.setDouble(3, e.getSalary());
 			statement.execute();
+			
 		} catch (SQLException ex) {
 			ex.getMessage();
 		}

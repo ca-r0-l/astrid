@@ -20,10 +20,9 @@ public class ConnectionFactory implements ConnectionRepository {
 			Class.forName(JDBC_DRIVER);
 			conn = DriverManager.getConnection(DB_URL, USER, PASS);
 		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
+			e.getMessage();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			e.getMessage();
 		}
 		
 		return conn;
