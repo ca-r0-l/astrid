@@ -2,12 +2,13 @@
 <html>
 	<head>
 	<meta charset="UTF-8">
-	<title>New Employe</title>
+	<title>New Employee</title>
 	</head>
 	<body>
 		<h1>New Employee</h1>
 		
 		<form action="/gerenciadorJson/newEmployee" method="post">
+			
 			<label>Name:</label>
 			<input type="text" name="name" />
 			

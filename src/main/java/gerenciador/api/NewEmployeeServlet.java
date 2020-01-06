@@ -1,8 +1,8 @@
 package gerenciador.api;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -16,20 +16,18 @@ public class NewEmployeeServlet extends HttpServlet {
 	
 	EmployeeRepositoryImpl  employee = new EmployeeRepositoryImpl();
 	
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		PrintWriter out = response.getWriter();
-		
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Employee e = new Employee(
 			request.getParameter("name"),
 			request.getParameter("department"),
 			Double.parseDouble(request.getParameter("salary"))
 		);
-
-		employee.save(e);
 		
-        response.setCharacterEncoding("UTF-8");
-        out.print("Cadastrado");
-        out.flush();
+		employee.save(e);
+
+		RequestDispatcher rd = request.getRequestDispatcher("/employeeSaved.jsp");
+		request.setAttribute("employeeName", e.getName());
+        rd.forward(request, response);
 	}
 
 }

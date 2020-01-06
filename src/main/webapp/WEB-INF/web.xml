@@ -14,7 +14,7 @@
   	<servlet-name>NewEmployeeServlet</servlet-name>
   	<display-name>NewEmployeeServlet</display-name>
   	<description></description>
-  	<servlet-class>gerenciador.application.NewEmployeeServlet</servlet-class>
+  	<servlet-class>gerenciador.api.NewEmployeeServlet</servlet-class>
   </servlet>
   <servlet>
   	<servlet-name>ListEmployeeServlet</servlet-name>

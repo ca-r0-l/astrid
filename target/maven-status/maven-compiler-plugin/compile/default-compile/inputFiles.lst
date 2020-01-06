@@ -1,2 +1,8 @@
+/home/carolineribeiro/eclipse-workspace/gerenciadorJson/src/main/java/gerenciador/gateways/ConnectionRepository.java
+/home/carolineribeiro/eclipse-workspace/gerenciadorJson/src/main/java/gerenciador/gateways/EmployeeRepository.java
 /home/carolineribeiro/eclipse-workspace/gerenciadorJson/src/main/java/gerenciador/entity/Employee.java
-/home/carolineribeiro/eclipse-workspace/gerenciadorJson/src/main/java/gerenciador/servlet/Main.java
+/home/carolineribeiro/eclipse-workspace/gerenciadorJson/src/main/java/gerenciador/api/NewEmployeeServlet.java
+/home/carolineribeiro/eclipse-workspace/gerenciadorJson/src/main/java/gerenciador/api/ListEmployeeServlet.java
+/home/carolineribeiro/eclipse-workspace/gerenciadorJson/src/main/java/gerenciador/application/Main.java
+/home/carolineribeiro/eclipse-workspace/gerenciadorJson/src/main/java/gerenciador/persistence/EmployeeRepositoryImpl.java
+/home/carolineribeiro/eclipse-workspace/gerenciadorJson/src/main/java/gerenciador/factory/ConnectionFactory.java
