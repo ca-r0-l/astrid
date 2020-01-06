@@ -22,6 +22,12 @@
   	<description></description>
   	<servlet-class>gerenciador.api.ListEmployeeServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>RemoveEmployeeServlet</servlet-name>
+  	<display-name>RemoveEmployeeServlet</display-name>
+  	<description></description>
+  	<servlet-class>gerenciador.api.RemoveEmployeeServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>Main</servlet-name>
   	<url-pattern>/Main</url-pattern>
@@ -33,5 +39,9 @@
   <servlet-mapping>
   	<servlet-name>ListEmployeeServlet</servlet-name>
   	<url-pattern>/listEmployee</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>RemoveEmployeeServlet</servlet-name>
+  	<url-pattern>/removeEmployee</url-pattern>
   </servlet-mapping>
 </web-app>

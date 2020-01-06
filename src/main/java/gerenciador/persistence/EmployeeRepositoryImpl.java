@@ -42,6 +42,32 @@ public class EmployeeRepositoryImpl implements EmployeeRepository{
 		}
 	}
 	
+	public void remove(int id) {
+		String sql = "delete from employee where id = ?;";
+		
+		try (PreparedStatement statement = connection.prepareStatement(sql)) {
+			statement.setInt(1, id);
+			statement.execute();
+			
+		} catch (SQLException ex) {
+			ex.getMessage();
+		}
+	}
+	
+	public void update(Employee e) {
+		String sql = "update from employee set name = ?, department = ?, salary = ? where id = ?;";
+		
+		try (PreparedStatement statement = connection.prepareStatement(sql)) {
+			statement.setString(1, e.getName());
+			statement.setString(2, e.getDepartment());
+			statement.setDouble(3, e.getSalary());
+			statement.execute();
+			
+		} catch (SQLException ex) {
+			ex.getMessage();
+		}
+	}
+	
 	private List<Employee> mountListEmployees(ResultSet rs) {
 		List<Employee> employees = new ArrayList<Employee>();
 		

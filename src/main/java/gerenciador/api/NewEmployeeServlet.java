@@ -14,7 +14,7 @@ import gerenciador.persistence.EmployeeRepositoryImpl;
 public class NewEmployeeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	EmployeeRepositoryImpl  employee = new EmployeeRepositoryImpl();
+	EmployeeRepositoryImpl employee = new EmployeeRepositoryImpl();
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Employee e = new Employee(
@@ -24,10 +24,10 @@ public class NewEmployeeServlet extends HttpServlet {
 		);
 		
 		employee.save(e);
-
-		RequestDispatcher rd = request.getRequestDispatcher("/employeeSaved.jsp");
+		
 		request.setAttribute("employeeName", e.getName());
-        rd.forward(request, response);
+		
+		response.sendRedirect("listEmployee");
 	}
 
 }
